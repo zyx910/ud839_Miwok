@@ -18,21 +18,28 @@ package com.example.android.miwok;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.TextView;
+import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+import java.util.ArrayList;
+import java.util.Arrays;
+
+public class MainActivity extends AppCompatActivity{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
 
+        super.onCreate(savedInstanceState);
+        ArrayList<String> arrayNumbers = new ArrayList<String>(Arrays.asList("one", "two","three","four","five","six","seven","eight","nine","ten"));
+        Log.v("MainActivity","arrayNumbers: "+arrayNumbers);
         // Set the content of the activity to use the activity_main.xml layout file
         setContentView(R.layout.activity_main);
 
         // Find the View that shows the numbers category
-        TextView numbers =  findViewById(R.id.numbers);
+        TextView numbers = findViewById(R.id.numbers);
 
         // Set a click listener on that View
         numbers.setOnClickListener(new OnClickListener() {
@@ -48,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         // Find the View that shows the family category
-        TextView family =  findViewById(R.id.family);
+        TextView family = findViewById(R.id.family);
 
         // Set a click listener on that View
         family.setOnClickListener(new OnClickListener() {
@@ -64,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         // Find the View that shows the colors category
-        TextView colors =  findViewById(R.id.colors);
+        TextView colors = findViewById(R.id.colors);
 
         // Set a click listener on that View
         colors.setOnClickListener(new OnClickListener() {
@@ -80,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         // Find the View that shows the phrases category
-        TextView phrases =  findViewById(R.id.phrases);
+        TextView phrases = findViewById(R.id.phrases);
 
         // Set a click listener on that View
         phrases.setOnClickListener(new OnClickListener() {
@@ -95,14 +102,33 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
         final TextView beauty = findViewById(R.id.beautyMM);
         beauty.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
+                Toast.makeText(view.getContext(),"i love west lake",Toast.LENGTH_SHORT).show();
                 Intent beautyIntent = new Intent(MainActivity.this,beautyMM.class);
                 startActivity(beautyIntent);
             }
+        }
 
-        });
-    }
+        );
+//        beauty.setOnClickListener(new OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent beautyIntent = new Intent(MainActivity.this,beautyMM.class);
+//                startActivity(beautyIntent);
+//            }
+//
+//        });
+
+
+
+}
+//    public void openBeauty(View view) {
+//        Intent beautyIntent = new Intent(MainActivity.this, beautyMM.class);
+//        startActivity(beautyIntent);
+//    }
+
 }
