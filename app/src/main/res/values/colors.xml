@@ -33,5 +33,8 @@
     <color name="category_colors">#8800A0</color>
 
     <!-- Background color for the phrases category -->
+
     <color name="category_phrases">#16AFCA</color>
+    <!-- background color for the  beauty category -->
+    <color name="beautyMM">#65ffcc</color>
 </resources>
